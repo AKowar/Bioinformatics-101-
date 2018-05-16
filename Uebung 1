@@ -1,1 +1,11 @@
+kmer={}                                 #Definieren der Variablen
 
+for i in range (0, len(text)-k+1):      #Vorschleife
+    x=(text[i:i+k])                     #Bestimmung der kmere mit länge k
+    if x in kmer:                       #Angabe, wenn kmer schon vorhanden
+        kmer[x]+-1                  
+    else: kmer[x]=1                     #Angabe, wenn kmer noch nicht vorhanden
+maxCount= max(kmer.values())            #Bestimmung des maximalen Wertes im Dict
+for Solution, value in kmer.items():    #Schleife für Wertpaare, wenn diese dem maxCount entsprechen     
+    if value==maxCount:                 
+        print(Solution)
